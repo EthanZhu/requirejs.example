@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+<!--
+	latest version : https://github.com/EthanZhu/requirejs-example
+	-->
+  <title>Requirejs example</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link rel="stylesheet" type="text/css" href="Content/css/global/reset.css" />
+  <link rel="stylesheet" type="text/css" href="Content/css/global/html5reset.css" />
+  <link rel="stylesheet" type="text/css" href="Content/css/global/global.css" />
+  <link rel="stylesheet" type="text/css" href="Content/css/header/header.css" />
+  <link rel="stylesheet" type="text/css" href="Content/css/footer/footer.css" />
+  <link rel="stylesheet" type="text/css" href="Content/css/login/login.css" />
+  <!--[if lt IE 9]><!--> 
+  	<link rel="stylesheet" type="text/css" href="Content/css/login/ltie9.css" /> 
+  <!--<![endif]-->
+  <link rel="shortcut icon" href="network.ico" />
+  
+  <script src="Scripts/libs/modernizr/2.5.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="Scripts/libs/require/1.0.7/require.min.js"></script>
+  <script type="text/javascript">
+  	require({
+		baseUrl: "Scripts",
+	  	paths: {
+			'config'  :	'global/login/config',
+			'patrns'  :	'global/login/config.patrns',
+			'console.plugin'  :	'global/console.plugins',
+	    	'jquery'  :	'libs/jquery/1.7.2/jquery.min',
+			'jquery.cookie' :	'libs/jquery.cookie/jquery.cookie.module',
+			'jquery.md5' :	'libs/jquery.md5/jquery.md5.module',
+			'jquery.ui' : 'libs/jquery.ui/1.8.18/ui.module'
+	  	},
+		priority:['jquery'],
+		waitSeconds: 60
+	},['./global/login/require/main']);
+  </script>
+</head>
+<body>
+<div id="login-main">
+  <header class="header"></header>
+  <div role="main" class="login login-height">
+        <div class="pa login-height login-content">
+        	<div class="fl">
+                <figure class="login-logo">
+                	<img alt="客户关系管理系统" src="Content/images/login-logo.gif" width="310" height="68" />
+                    <figcaption class="hidden">产业联合会</figcaption>
+                </figure>
+                <section class="login-infomation">
+                	<h4 class="hidden">infomation</h4>
+                    <ul>
+                        <li>1- 企业IT信息化实施的首选方案...</li>
+                        <li>2- 一站通式的整合方式，方便用户使用...</li>
+                        <li>3- 强大的后台系统，管理内容易如反掌...</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="fl form-action">
+            	<form method="post" action="" id="form-inputs" name="login-form">
+                	<p class="form-item pr">
+                        <input name="account" tabindex="1" class="form-input cp" id="username" type="text"/>
+                        <label class="pa form-label cp" for="username">用户名</label>
+                        <span class="pa form-tip"> </span>
+                    </p>
+                    <p class="form-item pr mt10">
+                        <input name="password" tabindex="2" class="form-input cp" id="userpass" type="password"/>
+                        <label class="pa form-label cp" for="userpass">密 码</label>
+                        <span class="pa form-tip"> </span>
+                    </p>
+                    <p class="cb form-misc pt10 pb10">
+                         <span><input type="checkbox" name="remember-box" id="remember-box" value="0" /> 
+                         <label class="remember cp" id="remember-label">保持登陆7天<em>（非本机请谨慎操作）</em></label></span>
+                    </p>
+                    <p class="pr btn block">
+                        <button class="ti cp btn-submit" id="submitButton" tabIndex="3" type="button" > </button>
+                        <a class="pa ti btn-master" href="javascript:void(0);"><span class="loading block">正在登录</span></a>
+                    </p>
+                </form>
+            </div>
+        </div>
+  </div>
+  <footer class="pa footer tc">
+  	<p>Copyright &copy; 2011-2012 <a href="http://www.gomesoft.com" target="_blank" style="color:#FFFFFF">www.gomesoft.com</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
